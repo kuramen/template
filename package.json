@@ -7,7 +7,8 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "fmt:check": "oxfmt --check",
+    "prepare": "lefthook install"
   },
   "dependencies": {
     "unplugin-vue-router": "^0.19.2",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "latest",
+    "lefthook": "^2.0.15",
     "nitro": "latest",
     "oxfmt": "latest",
     "oxlint": "latest",

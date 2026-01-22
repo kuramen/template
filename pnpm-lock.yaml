@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  vite@8.0.0-beta.9:
+    hash: 388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0
+    path: patches/vite@8.0.0-beta.9.patch
+
 importers:
 
   .:
@@ -19,20 +24,23 @@ importers:
         version: 4.6.4(vue@3.5.27)
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: ^6.0.3
-        version: 6.0.3(vite@8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.27)
+        specifier: latest
+        version: 6.0.3(vite@8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.27)
+      lefthook:
+        specifier: ^2.0.15
+        version: 2.0.15
       nitro:
         specifier: latest
-        version: 3.0.1-alpha.2(chokidar@5.0.0)(rolldown@1.0.0-rc.1)(vite@8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2))
+        version: 3.0.1-alpha.2(chokidar@5.0.0)(rolldown@1.0.0-rc.1)(vite@8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2))
       oxfmt:
-        specifier: ^0.26.0
+        specifier: latest
         version: 0.26.0
       oxlint:
-        specifier: ^1.41.0
+        specifier: latest
         version: 1.41.0
       vite:
         specifier: beta
-        version: 8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2)
+        version: 8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2)
 
 packages:
 
@@ -666,6 +674,60 @@ packages:
   json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
+    hasBin: true
+
+  lefthook-darwin-arm64@2.0.15:
+    resolution: {integrity: sha512-ygAqG/NzOgY9bEiqeQtiOmCRTtp9AmOd3eyrpEaSrRB9V9f3RHRgWDrWbde9BiHSsCzcbeY9/X2NuKZ69eUsNA==}
+    cpu: [arm64]
+    os: [darwin]
+
+  lefthook-darwin-x64@2.0.15:
+    resolution: {integrity: sha512-3wA30CzdSL5MFKD6dk7v8BMq7ScWQivpLbmIn3Pv67AaBavN57N/hcdGqOFnDDFI5WazVwDY7UqDfMIk5HZjEA==}
+    cpu: [x64]
+    os: [darwin]
+
+  lefthook-freebsd-arm64@2.0.15:
+    resolution: {integrity: sha512-FbYBBLVbX8BjdO+icN1t/pC3TOW3FAvTKv/zggBKNihv6jHNn/3s/0j2xIS0k0Pw9oOE7MVmEni3qp2j5vqHrQ==}
+    cpu: [arm64]
+    os: [freebsd]
+
+  lefthook-freebsd-x64@2.0.15:
+    resolution: {integrity: sha512-udHMjh1E8TfC0Z7Y249XZMATJOyj1Jxlj9JoEinkoBvAsePFKDEQg5teuXuTGhjsHYpqVekfSvLNNfHKUUbbjw==}
+    cpu: [x64]
+    os: [freebsd]
+
+  lefthook-linux-arm64@2.0.15:
+    resolution: {integrity: sha512-1HAPmdYhfcOlubv63sTnWtW2rFuC+kT1MvC3JvdrS5V6zrOImbBSnYZMJX/Dd3w4pm0x2ZJb9T+uef8a0jUQkg==}
+    cpu: [arm64]
+    os: [linux]
+
+  lefthook-linux-x64@2.0.15:
+    resolution: {integrity: sha512-Pho87mlNFH47zc4fPKzQSp8q9sWfIFW/KMMZfx/HZNmX25aUUTOqMyRwaXxtdAo/hNJ9FX4JeuZWq9Y3iyM5VA==}
+    cpu: [x64]
+    os: [linux]
+
+  lefthook-openbsd-arm64@2.0.15:
+    resolution: {integrity: sha512-pet03Edlj1QeFUgxcIK1xu8CeZA+ejYplvPgdfe//69+vQFGSDaEx3H2mVx8RqzWfmMbijM2/WfkZXR2EVw3bw==}
+    cpu: [arm64]
+    os: [openbsd]
+
+  lefthook-openbsd-x64@2.0.15:
+    resolution: {integrity: sha512-i+a364CcSAeIO5wQzLMHsthHt/v6n3XwhKmRq/VBzPOUv9KutNeF55yCE/6lvuvzwxpdEfBjh6cXPERC0yp98w==}
+    cpu: [x64]
+    os: [openbsd]
+
+  lefthook-windows-arm64@2.0.15:
+    resolution: {integrity: sha512-69u5GdVOT4QIxc2TK5ce0cTXLzwB55Pk9ZnnJNFf1XsyZTGcg9bUWYYTyD12CIIXbVTa0RVXIIrbU9UgP8O1AQ==}
+    cpu: [arm64]
+    os: [win32]
+
+  lefthook-windows-x64@2.0.15:
+    resolution: {integrity: sha512-/zYEndCUgj8XK+4wvLYLRk3AcfKU6zWf2GHx+tcZ4K2bLaQdej4m+OqmQsVpUlF8N2tN9hfwlj1D50uz75LUuQ==}
+    cpu: [x64]
+    os: [win32]
+
+  lefthook@2.0.15:
+    resolution: {integrity: sha512-sl5rePO6UUOLKp6Ci+MMKOc86zicBaPUCvSw2Cq4gCAgTmxpxhIjhz7LOu2ObYerVRPpTq3gvzPTjI71UotjnA==}
     hasBin: true
 
   lightningcss-android-arm64@1.31.1:
@@ -1325,10 +1387,10 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@vitejs/plugin-vue@6.0.3(vite@8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.27)':
+  '@vitejs/plugin-vue@6.0.3(vite@8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2))(vue@3.5.27)':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.53
-      vite: 8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2)
+      vite: 8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2)
       vue: 3.5.27
 
   '@volar/language-core@2.4.27':
@@ -1473,6 +1535,49 @@ snapshots:
 
   json5@2.2.3: {}
 
+  lefthook-darwin-arm64@2.0.15:
+    optional: true
+
+  lefthook-darwin-x64@2.0.15:
+    optional: true
+
+  lefthook-freebsd-arm64@2.0.15:
+    optional: true
+
+  lefthook-freebsd-x64@2.0.15:
+    optional: true
+
+  lefthook-linux-arm64@2.0.15:
+    optional: true
+
+  lefthook-linux-x64@2.0.15:
+    optional: true
+
+  lefthook-openbsd-arm64@2.0.15:
+    optional: true
+
+  lefthook-openbsd-x64@2.0.15:
+    optional: true
+
+  lefthook-windows-arm64@2.0.15:
+    optional: true
+
+  lefthook-windows-x64@2.0.15:
+    optional: true
+
+  lefthook@2.0.15:
+    optionalDependencies:
+      lefthook-darwin-arm64: 2.0.15
+      lefthook-darwin-x64: 2.0.15
+      lefthook-freebsd-arm64: 2.0.15
+      lefthook-freebsd-x64: 2.0.15
+      lefthook-linux-arm64: 2.0.15
+      lefthook-linux-x64: 2.0.15
+      lefthook-openbsd-arm64: 2.0.15
+      lefthook-openbsd-x64: 2.0.15
+      lefthook-windows-arm64: 2.0.15
+      lefthook-windows-x64: 2.0.15
+
   lightningcss-android-arm64@1.31.1:
     optional: true
 
@@ -1549,7 +1654,7 @@ snapshots:
 
   nf3@0.3.5: {}
 
-  nitro@3.0.1-alpha.2(chokidar@5.0.0)(rolldown@1.0.0-rc.1)(vite@8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2)):
+  nitro@3.0.1-alpha.2(chokidar@5.0.0)(rolldown@1.0.0-rc.1)(vite@8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2)):
     dependencies:
       consola: 3.4.2
       crossws: 0.4.3(srvx@0.10.1)
@@ -1567,7 +1672,7 @@ snapshots:
       unstorage: 2.0.0-alpha.5(chokidar@5.0.0)(db0@0.3.4)(ofetch@2.0.0-alpha.3)
     optionalDependencies:
       rolldown: 1.0.0-rc.1
-      vite: 8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2)
+      vite: 8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2)
     transitivePeerDependencies:
       - '@azure/app-configuration'
       - '@azure/cosmos'
@@ -1789,7 +1894,7 @@ snapshots:
       db0: 0.3.4
       ofetch: 2.0.0-alpha.3
 
-  vite@8.0.0-beta.9(jiti@2.6.1)(yaml@2.8.2):
+  vite@8.0.0-beta.9(patch_hash=388851e324c27398305c6943f7088495cb87c016473976706fa25c2a43a459e0)(jiti@2.6.1)(yaml@2.8.2):
     dependencies:
       '@oxc-project/runtime': 0.110.0
       fdir: 6.5.0(picomatch@4.0.3)

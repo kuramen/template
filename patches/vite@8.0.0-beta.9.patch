@@ -1,0 +1,22 @@
+diff --git a/dist/node/chunks/node.js b/dist/node/chunks/node.js
+index 55bded943d5a86043f8cee717ad8fadf6c29e55a..de893b116aaec70a8f272c0813a006aa73692b5f 100644
+--- a/dist/node/chunks/node.js
++++ b/dist/node/chunks/node.js
+@@ -34618,13 +34618,15 @@ function injectChunkMetadata(chunkMetadataMap, chunk, resetChunkMetadata = false
+ 	if (resetChunkMetadata) chunkMetadataMap.reset(chunk);
+ 	Object.defineProperty(chunk, "viteMetadata", {
+ 		value: chunkMetadataMap.get(chunk),
+-		enumerable: true
++		enumerable: true,
++		configurable: true
+ 	});
+ 	Object.defineProperty(chunk, "modules", {
+ 		get() {
+ 			return chunk.viteMetadata.__modules;
+ 		},
+-		enumerable: true
++		enumerable: true,
++		configurable: true
+ 	});
+ }
+ function injectEnvironmentInContext(context, environment) {
