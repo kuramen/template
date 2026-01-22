@@ -8,19 +8,30 @@
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
+    "test": "vitest",
+    "test:run": "vitest run",
     "prepare": "lefthook install"
   },
   "dependencies": {
+    "@vueuse/core": "^14.1.0",
     "unplugin-vue-router": "^0.19.2",
     "vue": "^3.5.27",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "latest",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^20.3.4",
     "lefthook": "^2.0.15",
     "nitro": "latest",
     "oxfmt": "latest",
     "oxlint": "latest",
-    "vite": "beta"
+    "vite": "beta",
+    "vitest": "^4.0.18"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "8.0.0-beta.9"
+    }
   }
 }
