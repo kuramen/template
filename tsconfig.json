@@ -1,0 +1,12 @@
+{
+  "extends": ["nitro/tsconfig"],
+  "compilerOptions": {
+    "moduleResolution": "Bundler",
+    "paths": {
+      "~app/*": ["./app/*"],
+      "~server/*": ["./server/*"]
+    },
+    "types": ["vite/client", "unplugin-vue-router/client"]
+  },
+  "include": ["**/*.ts", "**/*.vue"]
+}
