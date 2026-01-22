@@ -10,6 +10,6 @@ describe("index page", () => {
 
   it("renders the api button", () => {
     const wrapper = mount(IndexPage);
-    expect(wrapper.find("button").text()).toBe("Call /api/hello");
+    expect(wrapper.find("button").text()).toBe("Call /api");
   });
 });

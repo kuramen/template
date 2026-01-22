@@ -13,10 +13,9 @@
     "prepare": "lefthook install"
   },
   "dependencies": {
-    "@vueuse/core": "^14.1.0",
-    "unplugin-vue-router": "^0.19.2",
+    "@vueuse/core": "latest",
     "vue": "beta",
-    "vue-router": "^4.6.4"
+    "vue-router": "beta"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "latest",

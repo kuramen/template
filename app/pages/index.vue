@@ -3,8 +3,8 @@ import { ref } from "vue";
 
 const message = ref("");
 
-async function fetchHello() {
-  const res = await fetch("/api/hello");
+async function call() {
+  const res = await fetch("/api");
   const data = await res.json();
   message.value = data.api;
 }
@@ -13,7 +13,7 @@ async function fetchHello() {
 <template>
   <div>
     <h1>Nitro + Vite + Vue</h1>
-    <button @click="fetchHello">Call /api/hello</button>
+    <button @click="call">Call /api</button>
     <p v-if="message">{{ message }}</p>
   </div>
 </template>
